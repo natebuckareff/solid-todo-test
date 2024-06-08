@@ -43,7 +43,7 @@ export const updateTodo = action(async (id: string, changes: Partial<Omit<Todo, 
   }
   const todo = (await storage.getItem(id)) as Todo;
   await storage.setItem(id, { ...todo, ...changes });
-  reload({ revalidate: [] }); // getTodo.keyFor(id) });
+  reload({ revalidate: [getTodo.keyFor(id)] });
 }, 'updateTodo');
 
 export const deleteTodo = action(async (id: string) => {
