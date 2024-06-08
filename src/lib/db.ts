@@ -1,8 +1,6 @@
 import { createStorage } from 'unstorage';
-import fsLiteDriver from 'unstorage/drivers/fs-lite';
+import memoryDriver from 'unstorage/drivers/memory';
 
 export const storage = createStorage({
-  driver: fsLiteDriver({
-    base: './.data',
-  }),
+  driver: memoryDriver(),
 });
