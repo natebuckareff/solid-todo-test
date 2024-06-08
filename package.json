@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
-    "build": "vinxi build",
+    "build": "SERVER_PRESET=netlify vinxi build",
     "start": "vinxi start",
     "version": "vinxi version"
   },
